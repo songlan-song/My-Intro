@@ -3,7 +3,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js"
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"
 //创建场景
 const scene = new THREE.Scene()
 
@@ -16,7 +16,7 @@ renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
 
 //实例化加载器
-const gltfLoader= new GLTFLoader()
+const gltfLoader = new GLTFLoader()
 //加载模型
 gltfLoader.load("/scene.gltf", (gltf) => {
     let vertices = [];
@@ -48,44 +48,37 @@ gltfLoader.load("/scene.gltf", (gltf) => {
     scene.add(nebula);
     const nebulaRotationSpeed = 0.01;
     //设置相机位置
-camera.position.z = 5
-camera.position.y=3
-camera.position.x=2
-camera.lookAt(0, 0, 0)
+    camera.position.z = 5
+    camera.position.y = 3
+    camera.position.x = 2
+    camera.lookAt(0, 0, 0)
 
-function animate() {
-    // 更新星云的旋转
-    nebula.rotation.x += nebulaRotationSpeed;
-    nebula.rotation.y += nebulaRotationSpeed;
-    
-    renderer.render(scene, camera);
-    requestAnimationFrame(animate);
-}
-animate();
+    function animate() {
+        // 更新星云的旋转
+        nebula.rotation.x += nebulaRotationSpeed;
+        nebula.rotation.y += nebulaRotationSpeed;
+
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+    }
+    animate();
 });
-
-
-
-
-
 
 //添加世界坐标辅助器(括号中为线段长度)
 const axesHelper = new THREE.AxesHelper(5)
 scene.add(axesHelper)
 
 //添加轨道控制器
-const controls = new OrbitControls(camera,renderer.domElement)
+const controls = new OrbitControls(camera, renderer.domElement)
 //设置带阻尼的惯性
-controls.enableDamping =true
-
-
+controls.enableDamping = true
 
 //监听窗口变化，重重窗口大小
-window.addEventListener("resize",()=>{
+window.addEventListener("resize", () => {
     //充值渲染器宽高比
-    renderer.setSize(window.innerWidth,window.innerHeight)
+    renderer.setSize(window.innerWidth, window.innerHeight)
     //重置相机宽高比
-    camera.aspect=window.innerWidth/window.innerHeight
+    camera.aspect = window.innerWidth / window.innerHeight
     //更新相机投影矩阵
     camera.updateProjectionMatrix()
 })
