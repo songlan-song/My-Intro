@@ -1,6 +1,23 @@
 <template>
     <div class="home">
-        <div class="canvas-container" ref="screenDom"></div>
+        <div class="wrap">
+            <div class="intro-container"  id="intro-container">
+            <div class="canvas-container" ref="screenDom" id="canvas-container"></div>
+            <div class="scrollCharacter-container">
+                <ul class="all-charters">
+                    <li class="text1" ref="text1" style="opacity: 1;">1111111111111111111111111111111</li>
+                    <li class="text2" ref="text2">2222222222222222222222222222222</li>
+                    <li class="text3" ref="text3">3333333333333333333333333333333</li>
+                    <li class="text4" ref="text4">4444444444444444444444444444444</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <div class="tour-container">
+            <div class="UK-tour"></div>
+            <div class="Spain-tour"></div>
+            <div class="France-tour"></div>
+        </div>
     </div>
 </template>
 <script setup>
@@ -9,7 +26,13 @@ import * as THREE from 'three';
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"
 import { gsap } from "gsap"
-let screenDom = ref(null)
+import { ScrollTrigger } from 'gsap/all';
+import Header from "../components/Header.vue"
+const screenDom = ref(null)
+const text1 = ref(null)
+const text2 = ref(null)
+const text3 = ref(null)
+const text4 = ref(null)
 onMounted(() => {
     //创建场景
     const scene = new THREE.Scene()
@@ -63,20 +86,20 @@ onMounted(() => {
                 duration: 1,
             });
         })
-        
+
         //滑轮滚动摄影机拉远/拉近
         window.addEventListener("wheel", e => {
             // 使用e.deltaY来确定滚动方向
             let targetPosition = { x: camera.position.x, y: camera.position.y, z: camera.position.z };
             if (e.deltaY > 0) {
-                targetPosition.z += 1;
+                targetPosition.z += 1.5;
                 targetPosition.y += 0.2
                 if (targetPosition.z > 10) targetPosition.z = 10
                 if (targetPosition.y > 1) targetPosition.y = 1
 
 
             } else {
-                targetPosition.z -= 1;
+                targetPosition.z -= 1.5;
                 targetPosition.y -= 0.2;
                 if (targetPosition.z < 6) targetPosition.z = 6
                 if (targetPosition.y < 0) targetPosition.y = 0
@@ -97,7 +120,7 @@ onMounted(() => {
                 100
             );
 
-          
+
             for (let i = 0; i < 100; i++) {
                 let x = Math.random() * 1000 - 500;
                 let y = Math.random() * 1000 - 500;
@@ -123,9 +146,9 @@ onMounted(() => {
         requestAnimationFrame(render)
         if (mixer) {
             // clock是THREE.Clock的实例，用于获取自上次调用以来经过的时间。
-            const delta = clock.getDelta(); 
-             // 更新mixer，这将播放动画
-            mixer.update(delta); 
+            const delta = clock.getDelta();
+            // 更新mixer，这将播放动画
+            mixer.update(delta);
         }
         renderer.render(scene, camera)
     }
@@ -152,7 +175,113 @@ onMounted(() => {
         camera.updateProjectionMatrix()
     })
 
+    //文字滚动高亮效果
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+        trigger: "#app",
+        start: "top top",
+        end: "+=800",
+        scrub: true,
+        pin: true,
+        animation: gsap.timeline()
+            .to(".text1", { opacity: 1, duration: 1 }) // 淡入
+            .to(".text1", { opacity: 0.3, duration: 1 }) // 淡出
+            .to(".text2", { opacity: 1, duration: 1.5 })
+            .to(".text2", { opacity: 0.3, duration: 1.5 })
+            .to(".text3", { opacity: 1, duration: 1.5 })
+            .to(".text3", { opacity: 0.3, duration: 1.5 })
+            .to(".text4", { opacity: 1, duration: 1 })
+
+    });
+
+    //intro-container淡出效果
+    ScrollTrigger.create({
+    trigger: ".tour-container",
+    start: "top top",
+    end: "+=800",
+    scrub: true,
+    onEnter: () => {
+        gsap.to(".intro-container", {
+            bottom:"-130px",
+            scale: 0.8,
+            transformOrigin: "center center",
+            duration: 0.5,
+            transform: "translateZ(-200px)"
+        });
+    },
+    onLeaveBack: () => {
+        gsap.to(".intro-container", {
+            scale: 1,
+            bottom:0,
+            transformOrigin: "center center",
+            duration: 0.5,
+            transform: "translateZ(0px)"
+        });
+    }
+});
+
+
+
 })
 
 </script>
-<style  scoped></style>
+<style  scoped>
+.wrap{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    perspective: 1000px
+}
+.intro-container{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin:0 auto;
+    transform-origin: center center;
+    position: absolute;
+}
+
+.home {
+    position: relative
+}
+
+.scrollCharacter-container {
+    width: 40vw;
+    height: 55vh;
+    position: absolute;
+    top: 20vh;
+}
+
+.scrollCharacter-container li {
+    display: inline;
+    line-height: 1.2;
+    font-weight: 600;
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    opacity: 0.3;
+    overflow-wrap: break-word;
+}
+.tour-container{
+    widows: 100%;
+    height: 100vh;
+    margin-top: 0;
+}
+.UK-tour {
+    width: 100%;
+    height: 33vh;
+    background-color: yellow;
+}
+
+.Spain-tour {
+    width: 100%;
+    height: 33vh;
+    background-color: green
+}
+
+.France-tour {
+    width:100%;
+    height: 33vh;
+    background-color: aqua
+}
+</style>

@@ -1,11 +1,13 @@
+<template>
+  <div class="main-content">
+    <router-view></router-view>
+  </div>
+</template>
 <script setup>
 
 </script>
-
-<template>
-  <div class="main-content">
-    <router-view />
-  </div>
-</template>
-
-<style scoped></style>
+<style scoped>
+.main-content{
+  position: relative;
+}
+</style>
