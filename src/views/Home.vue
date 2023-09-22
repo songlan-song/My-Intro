@@ -9,9 +9,9 @@
                     <span class="job">前端开发</span>
                     <ul class="all-charters">
                         <li class="text1" ref="text1" style="opacity: 1;">一个简单的代码爱好者,热衷于学习前端的各种技术，目前是一个前端开发工程师。</li>
-                        <li class="text2" ref="text2">2022年本科毕业于北京工业大学测控技术与仪器专业，2023年硕士毕业于伯明翰大学电子与计算机工程专业。</li>
-                        <li class="text3" ref="text3">乐观和热情是我的礼物，不敲代码的时候，有时是玩家，有时是运动员。热爱LOL，热爱篮球，偶尔看剧，喜欢美食。</li>
-                        <li class="text4" ref="text4">如果你也喜欢开源，喜欢创造，喜欢分享，欢迎在我的网站留言。</li>
+                        <li class="text2" ref="text2">乐观和热情是我的礼物，不敲代码的时候，有时是玩家，有时是运动员。热爱LOL，热爱篮球，偶尔看剧，喜欢美食。</li>
+                        <li class="text3" ref="text3">如果你也喜欢开源，喜欢创造，喜欢分享，欢迎在我的网站留言。</li>
+                        <li class="text4" ref="text4">这句话支持着我一直前进，希望你也能从中获取一些力量：勇敢是当你还未开始就已经知道自己会输，可你依然要去做，而且无论如何都要把它坚持到底，你很少能赢，但有时也会。</li>
                     </ul>
                 </div>
             </div>
@@ -243,7 +243,7 @@ onMounted(() => {
     ScrollTrigger.create({
         trigger: ".wrap",
         start: "top top",
-        end: "+=800",
+        end: "+=1000",
         scrub: true,
         pin: true,
         animation: gsap.timeline()
