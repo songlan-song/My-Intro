@@ -500,6 +500,7 @@ onMounted(() => {
     background-clip: text; 
     color: transparent;
     display: block;
+    padding-left: 6px;
 }
 .Spain-name{
     font-size: 80px;
