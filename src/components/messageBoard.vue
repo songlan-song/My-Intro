@@ -2,12 +2,10 @@
     <div class="message-board-wrap">
         <div class="message-board">
             <div class="message-show-container">
-                <!-- 渲染已经显示的消息 -->
-                <span v-for="(message, index) in displayedMessages" :key="index"
-                    :style="{ top: message.randomTop + 'px' }">{{ message.content }}</span>
                 <!-- 渲染新消息 -->
-                <span v-for="(message, index) in newMessages" :key="index" :style="{ top: message.randomTop + 'px' }">{{
-                    message.content }}</span>
+                <span class="span" v-for="(message, index) in newMessages" :key="index"
+                    :style="{ top: message.randomTop + 'px' }">{{
+                        message.content }}</span>
             </div>
             <el-form :model="form">
                 <el-form-item class="comment-input-conainer">
@@ -21,19 +19,9 @@
 </template>
 <script setup>
 import { onMounted, reactive, ref, computed } from 'vue'
-const form = reactive({
-    name: '',
-    region: '',
-    date1: '',
-    date2: '',
-    delivery: false,
-    type: [],
-    resource: '',
-    desc: '',
-})
-const randomTop = ref(0);
-const displayedMessages = reactive([]); // 用于已显示的消息
-const newMessages = reactive([]); // 用于新消息
+const form = reactive({name: ''})
+
+const newMessages = reactive([]); 
 
 const onSubmit = () => {
     if (form.name.trim() !== '') {
@@ -48,18 +36,42 @@ const onSubmit = () => {
         form.name = '';
     }
 }
+
 onMounted(() => {
     //修改评论区背景颜色 和按钮背景颜色
     const elInputWrappers = document.querySelectorAll('.el-input__wrapper');
     elInputWrappers.forEach(wrapper => {
         wrapper.style.backgroundColor = 'transparent';
     });
-
-
+    //运行防止重叠的弹幕随机速度效果函数
+    applyRandomAnimationTimingFunction();
 })
 const generateRandomTop = () => {
     // 生成0到270之间的随机数
     return Math.floor(Math.random() * 271);
+};
+
+//防止重叠的弹幕随机速度效果
+const applyRandomAnimationTimingFunction = () => {
+    const spans = document.querySelectorAll('.message-show-container span');
+    spans.forEach(span => {
+        const randomTimingFunction = getRandomTimingFunction();
+        span.style.animationTimingFunction = randomTimingFunction;
+    });
+};
+
+//获取随机的一个动画timing值
+const getRandomTimingFunction = () => {
+    const animationTimingFunctions = [
+        'linear',
+        'ease',
+        'ease-in',
+        'ease-out',
+        'ease-in-out'
+    ];
+
+    const randomIndex = Math.floor(Math.random() * animationTimingFunctions.length);
+    return animationTimingFunctions[randomIndex];
 };
 </script>
 <style  scoped>
@@ -93,7 +105,7 @@ const generateRandomTop = () => {
     right: 0;
     white-space: nowrap;
     /* top: 0到270px之间的随机值 */
-    animation: scrolling-message 10s linear infinite;
+    animation: scrolling-message 10s infinite;
 }
 
 @keyframes scrolling-message {
