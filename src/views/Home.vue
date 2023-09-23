@@ -19,16 +19,7 @@
                             这句话支持着我一直前进，希望你也能从中获取一些力量：勇敢是当你还未开始就已经知道自己会输，可你依然要去做，而且无论如何都要把它坚持到底，你很少能赢，但有时也会。</li>
                     </ul>
                 </div>
-                <div class="message-board-wrap">
-                    <div class="message-board">
-                        <el-form :model="form">
-                            <el-form-item class="comment-input-conainer">
-                                <el-input class="comment-input" v-model="form.name" placeholder="欢迎留言交流" style="width: 750px;" />
-                                <el-button  @click="onSubmit" style="margin-left: 20px;background-color: transparent;">发表</el-button>
-                            </el-form-item>
-                        </el-form>
-                    </div>
-                </div>
+                <messageBoard />
             </div>
         </div>
         <div class="tour-container">
@@ -103,6 +94,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"
 import { gsap } from "gsap"
 import { ScrollTrigger } from 'gsap/all';
 import Header from "../components/Header.vue"
+import messageBoard from '../components/messageBoard.vue';
 const screenDom = ref(null)
 const text1 = ref(null)
 const text2 = ref(null)
@@ -110,20 +102,7 @@ const text3 = ref(null)
 const text4 = ref(null)
 const imageOpacity = ref(0)
 
-const form = reactive({
-    name: '',
-    region: '',
-    date1: '',
-    date2: '',
-    delivery: false,
-    type: [],
-    resource: '',
-    desc: '',
-})
 
-const onSubmit = () => {
-    console.log('submit!')
-}
 function handleMouseEnter() {
     imageOpacity.value = 0.4
 }
@@ -317,11 +296,7 @@ onMounted(() => {
         }
     });
 
-    //修改评论区背景颜色 和按钮背景颜色
-    const elInputWrappers = document.querySelectorAll('.el-input__wrapper');
-    elInputWrappers.forEach(wrapper => {
-        wrapper.style.backgroundColor = 'transparent';
-    });
+
 
 })
 
@@ -568,13 +543,7 @@ onMounted(() => {
     display: block;
 }
 
-.message-board {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 880px;
-    height: 380px;
-}
+
 
 .logo {
     position: absolute;
@@ -605,9 +574,5 @@ onMounted(() => {
     color: transparent;
 }
 
-.comment-input-conainer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
+
 </style>
