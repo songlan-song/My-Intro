@@ -44,21 +44,14 @@
 </template>
 <script setup>
 import { reactive, ref } from 'vue'
-const imageOpacity = ref(0)
 
 
-function handleMouseEnter() {
-    imageOpacity.value = 0.4
-}
-function handleMouseLeave() {
-    imageOpacity.value = 0
-}
 </script>
 <style  scoped>
 .UK-tour {
     width: 100%;
     height: 100vh;
-    background: url("/UK/2.png");
+    background: url("/UK/9.jpg");
     background-size: cover;
     position: relative;
 }
@@ -169,27 +162,9 @@ function handleMouseLeave() {
 }
 
 
-
-.moreinfo-character {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 30px;
-    margin-bottom: 10px;
-
-}
-
-.moreinfo-character span {
-    color: #fff;
-    font-weight: 700;
-    position: absolute;
-    left: 65px;
-    opacity: 1;
-}
-
 .UK-name {
     font-size: 80px;
-    background-image: linear-gradient(to top, #f0932b, #ffbe76);
+    background-image: linear-gradient(to top, #22a6b3, #7ed6df);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -208,7 +183,8 @@ function handleMouseLeave() {
 
 .France-name {
     font-size: 80px;
-    background-image: linear-gradient(to top, #22a6b3, #7ed6df);
+
+    background-image: linear-gradient(to top, #f0932b, #ffbe76);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

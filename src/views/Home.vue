@@ -25,18 +25,20 @@
         <div class="tabs-container">
             <div class="main-content-container">
                 <div class="row" style="width: 100%;height: 33%;">
-                    <el-card  class="card1" @click="toFootPrints">
-                        <div ><h1 style="color: #fff;cursor: pointer;">我的足迹</h1></div>
+                    <el-card class="card1" @click="toFootPrints">
+                        <div>
+                            <h1 style="color: #fff;cursor: pointer;">我的足迹</h1>
+                        </div>
                     </el-card>
-                    <el-card  class="card2"> 最近在听 </el-card>
+                    <el-card class="card2"> 最近在听 </el-card>
                 </div>
                 <div class="row" style="width: 100%;height: 33%;">
-                    <el-card  class="card3"> Hover </el-card>
+                    <el-card class="card3"> Hover </el-card>
                     <el-card class="card4"> Hover </el-card>
                 </div>
                 <div class="row" style="width: 100%;height: 33%;">
-                    <el-card  class="card5"> Hover </el-card>
-                    <el-card  class="card6"> Hover </el-card>
+                    <el-card class="card5"> Hover </el-card>
+                    <el-card class="card6"> Hover </el-card>
                 </div>
             </div>
         </div>
@@ -59,8 +61,9 @@ const text3 = ref(null)
 const text4 = ref(null)
 const router = useRouter()
 
-function toFootPrints(){
+function toFootPrints() {
     router.push("/myFootprints")
+    window.scrollTo(0, 0);
 }
 onMounted(() => {
     //创建场景
@@ -223,11 +226,9 @@ onMounted(() => {
             .to(".text4", { opacity: 1, duration: 1 })
     });
 
-    //intro-container淡出效果
+    // intro-container淡出效果
     ScrollTrigger.create({
         trigger: ".tabs-container",
-        start: "top 800px",
-        end: "+=800",
         scrub: true,
         onEnter: () => {
             gsap.to(".intro-container", {
@@ -248,8 +249,16 @@ onMounted(() => {
             });
         }
     });
-
-
+    
+    //防止回到"/"页面时还处于缩小状态
+    router.beforeEach((to, from, next) => {
+        // 清除所有的ScrollTrigger实例
+        ScrollTrigger.getAll().forEach(trigger => {
+            trigger.kill(); // 清除ScrollTrigger
+        });
+        // 继续导航
+        next();
+    });
 
 })
 
@@ -368,10 +377,11 @@ onMounted(() => {
     flex-wrap: wrap;
 }
 
-.row{
+.row {
     display: flex;
     position: relative;
 }
+
 .card1 {
     width: 60%;
     height: 100%;
@@ -379,33 +389,38 @@ onMounted(() => {
     background-size: cover;
     position: relative;
     cursor: pointer;
-    
+
 }
-.card2{
+
+.card2 {
     width: 40%;
     height: 100%;
     position: relative;
     cursor: pointer;
 }
-.card3{
+
+.card3 {
     width: 40%;
     height: 100%;
     position: relative;
     cursor: pointer;
 }
-.card4{
+
+.card4 {
     width: 60%;
     height: 100%;
     position: relative;
     cursor: pointer;
 }
-.card5{
+
+.card5 {
     width: 50%;
     height: 100%;
     position: relative;
     cursor: pointer;
 }
-.card6{
+
+.card6 {
     width: 50%;
     height: 100%;
     position: relative;
@@ -425,10 +440,14 @@ onMounted(() => {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* 透明度为0.4的黑色背景 */
-    opacity: 0; /* 默认情况下不可见 */
-    transition: opacity 0.3s ease-in-out; /* 添加渐变效果 */
-    pointer-events: none; /* 防止覆盖层阻挡交互 */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* 透明度为0.4的黑色背景 */
+    opacity: 0;
+    /* 默认情况下不可见 */
+    transition: opacity 0.3s ease-in-out;
+    /* 添加渐变效果 */
+    pointer-events: none;
+    /* 防止覆盖层阻挡交互 */
 }
 
 /* 当鼠标悬停在卡片上时显示覆盖层 */
@@ -438,6 +457,6 @@ onMounted(() => {
 .card4:hover::before,
 .card5:hover::before,
 .card6:hover::before {
-    opacity: 1; /* 显示覆盖层 */
-}
-</style>
+    opacity: 1;
+    /* 显示覆盖层 */
+}</style>
