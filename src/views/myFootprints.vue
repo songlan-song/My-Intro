@@ -1,7 +1,7 @@
 <template>
-<div class="tour-wrap">
-    <div class="tour-container">
-        <div class="UK-tour">
+    <div class="tour-wrap">
+        <div class="tour-container">
+            <div class="UK-tour">
                 <div class="UK-chracter">
                     <span class="UK-name">伦敦</span>
                     <ul>
@@ -11,7 +11,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="UK-more-information" ref="franceMoreInformation"></div>
+                <div class="UK-more-information" @click="toUKtour"></div>
 
             </div>
             <div class="Spain-tour">
@@ -23,28 +23,45 @@
                         </li>
                     </ul>
                 </div>
-                <div class="Spain-more-information" ref="franceMoreInformation"></div>
+                <div class="Spain-more-information" @click="toSpaintour"></div>
 
-                </div>
             </div>
-            <div class="France-tour">
-                <div class="France-chracter">
-                    <span class="France-name">巴黎</span>
-                    <ul>
-                        <li>巴黎，被誉为“光之城”，是一座充满浪漫与艺术氛围的城市。这里是时尚的发源地，艺术的殿堂，美食的天堂。巴黎的每一条街道、每一座建筑都仿佛在讲述着一段古老而浪漫的故事。</li>
-                        <li>艾菲尔铁塔是巴黎乃至全球最为人们所熟知的地标之一，她伫立在塞纳河畔，以其优雅的姿态和独特的设计吸引着世界各地的游客。当夜幕降临，艾菲尔铁塔上的灯光闪烁，整个城市都仿佛被浪漫的氛围所包围。
-                        </li>
-                        <li>巴黎还是世界著名的艺术之都。卢浮宫博物馆收藏着丰富的艺术珍品，如《蒙娜丽莎》和《胜利女神像》等，是艺术爱好者的必游之地。</li>
-                        <li>这座城市无论在哪个角落，都充满了浪漫和诗意，无论是漫步在塞纳河畔，还是欣赏夜晚的巴黎，都会让您感受到这座城市独特的魅力，留下难以忘怀的回忆。</li>
-                    </ul>
-                </div>
-                <div class="France-more-information" ref="franceMoreInformation"></div>
+        </div>
+        <div class="France-tour">
+            <div class="France-chracter">
+                <span class="France-name">巴黎</span>
+                <ul>
+                    <li>巴黎，被誉为“光之城”，是一座充满浪漫与艺术氛围的城市。这里是时尚的发源地，艺术的殿堂，美食的天堂。巴黎的每一条街道、每一座建筑都仿佛在讲述着一段古老而浪漫的故事。</li>
+                    <li>艾菲尔铁塔是巴黎乃至全球最为人们所熟知的地标之一，她伫立在塞纳河畔，以其优雅的姿态和独特的设计吸引着世界各地的游客。当夜幕降临，艾菲尔铁塔上的灯光闪烁，整个城市都仿佛被浪漫的氛围所包围。
+                    </li>
+                    <li>巴黎还是世界著名的艺术之都。卢浮宫博物馆收藏着丰富的艺术珍品，如《蒙娜丽莎》和《胜利女神像》等，是艺术爱好者的必游之地。</li>
+                    <li>这座城市无论在哪个角落，都充满了浪漫和诗意，无论是漫步在塞纳河畔，还是欣赏夜晚的巴黎，都会让您感受到这座城市独特的魅力，留下难以忘怀的回忆。</li>
+                </ul>
+            </div>
+            <div class="France-more-information" @click="toFrancetour"></div>
+        </div>
     </div>
-</div>
 </template>
 <script setup>
 import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router';
 
+const router = useRouter()
+
+function toUKtour() {
+    router.push("/UKtour")
+
+}
+
+function toSpaintour() {
+    router.push("/Spaintour")
+
+} 
+
+function toFrancetour() {
+    router.push("/Francetour")
+
+}
 
 </script>
 <style  scoped>
@@ -193,28 +210,35 @@ import { reactive, ref } from 'vue'
 
 .France-more-information::before,
 .UK-more-information::before,
-.Spain-more-information::before{
+.Spain-more-information::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* 透明度为0.4的黑色背景 */
-    opacity: 0; /* 默认情况下不可见 */
-    transition: opacity 0.3s ease-in-out; /* 添加渐变效果 */
-    pointer-events: none; /* 防止覆盖层阻挡交互 */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* 透明度为0.4的黑色背景 */
+    opacity: 0;
+    /* 默认情况下不可见 */
+    transition: opacity 0.3s ease-in-out;
+    /* 添加渐变效果 */
+    pointer-events: none;
+    /* 防止覆盖层阻挡交互 */
 }
 
 /* 当鼠标悬停在卡片上时显示覆盖层 */
 .France-more-information:hover::before,
 .UK-more-information:hover::before,
 .Spain-more-information:hover::before {
-    opacity: 1; /* 显示覆盖层 */
+    opacity: 1;
+    /* 显示覆盖层 */
     content: "探索更多";
     color: #fff;
-    display: flex; /* 使用 flex 布局 */
-    align-items: flex-end; /* 垂直居中对齐 */
-    justify-content: center; /* 水平居中对齐 */
-}
-</style>
+    display: flex;
+    /* 使用 flex 布局 */
+    align-items: flex-end;
+    /* 垂直居中对齐 */
+    justify-content: center;
+    /* 水平居中对齐 */
+}</style>

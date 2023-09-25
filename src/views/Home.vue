@@ -27,10 +27,42 @@
                 <div class="row" style="width: 100%;height: 33%;">
                     <el-card class="card1" @click="toFootPrints">
                         <div>
-                            <h1 style="color: #fff;cursor: pointer;">我的足迹</h1>
+                            <h1 style="cursor: pointer;">我的足迹</h1>
+
                         </div>
                     </el-card>
-                    <el-card class="card2"> 最近在听 </el-card>
+                    <el-card class="card2">
+                        <el-row>
+                            <el-col :span="12">
+                                <h1 style="cursor: default">喜欢的歌</h1>
+                            </el-col>
+                            <el-col :span="12">
+                                <h4 class="yequ">夜曲-周杰伦</h4>
+                              <audio  src="/mp3/yequ.mp3" controls="control"></audio>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="12">
+                                <h4 class="fanfangxiang" >反方向的钟-周杰伦</h4>
+                              <audio  src="/mp3/fanfangxiang.mp3" controls="control" style="position: absolute;padding-top: 20px;left: -10px;"></audio>
+                            </el-col>
+                            <el-col :span="12">
+                                <h4 class="yedediqizhang" style="padding-top: 20px;">夜的第七章-周杰伦</h4>
+                              <audio  src="/mp3/yedediqizhang.mp3" controls="control" style="padding-top: 20px;"></audio>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="12">
+                                <h4 class="anhao">暗号-周杰伦</h4>
+                              <audio  src="/mp3/anhao.mp3" controls="control" style="position: absolute;left: -10px;padding-top: 20px"></audio>
+                            </el-col>
+                            <el-col :span="12">
+                                <h4 class="yifuzhiming" style="padding-top: 20px;">以父之名-周杰伦</h4>
+                              <audio  src="/mp3/yifuzhiming.mp3" controls="control" style="padding-top: 20px;"></audio>
+                            </el-col>
+                        </el-row>
+                    </el-card>
+
                 </div>
                 <div class="row" style="width: 100%;height: 33%;">
                     <el-card class="card3"> Hover </el-card>
@@ -65,6 +97,7 @@ function toFootPrints() {
     router.push("/myFootprints")
     window.scrollTo(0, 0);
 }
+
 onMounted(() => {
     //创建场景
     const scene = new THREE.Scene()
@@ -249,7 +282,7 @@ onMounted(() => {
             });
         }
     });
-    
+
     //防止回到"/"页面时还处于缩小状态
     router.beforeEach((to, from, next) => {
         // 清除所有的ScrollTrigger实例
@@ -396,7 +429,7 @@ onMounted(() => {
     width: 40%;
     height: 100%;
     position: relative;
-    cursor: pointer;
+    background: linear-gradient(135deg, #fff 10%, #000);
 }
 
 .card3 {
@@ -427,9 +460,22 @@ onMounted(() => {
     cursor: pointer;
 }
 
+.tabs-container h1 {
+    font-size: 3em;
+    text-shadow:
+        -1px 1px #bbb,
+        -2px 2px #bbb,
+        -3px 3px #bbb,
+        -4px 4px #bbb,
+        -8px 8px #0008;
+    color: #fff;
+
+
+}
+
 /* 添加覆盖层样式 */
 .card1::before,
-.card2::before,
+
 .card3::before,
 .card4::before,
 .card5::before,
@@ -451,12 +497,27 @@ onMounted(() => {
 }
 
 /* 当鼠标悬停在卡片上时显示覆盖层 */
+
 .card1:hover::before,
-.card2:hover::before,
 .card3:hover::before,
 .card4:hover::before,
 .card5:hover::before,
 .card6:hover::before {
     opacity: 1;
     /* 显示覆盖层 */
-}</style>
+}
+.yequ,.yedediqizhang,.yifuzhiming{
+    position: absolute;
+    top: -12px;
+    left: 304px;
+}
+.fanfangxiang,.anhao{
+    position: absolute;
+    top: 8px;
+    left: 10px;
+}
+audio{
+  width: 283px;
+  height: 63.3px;
+}
+</style>

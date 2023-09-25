@@ -12,6 +12,7 @@
     "@element-plus/icons-vue": "^2.1.0",
     "element-plus": "^2.3.14",
     "gsap": "^3.12.2",
+    "sass-math": "^1.0.0",
     "three": "^0.156.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
@@ -19,6 +20,8 @@
   "devDependencies": {
     "@types/three": "^0.156.0",
     "@vitejs/plugin-vue": "^4.2.3",
+    "sass": "^1.68.0",
+    "sass-loader": "^13.3.2",
     "vite": "^4.4.5"
   }
 }
