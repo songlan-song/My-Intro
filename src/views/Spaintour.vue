@@ -42,10 +42,10 @@ $size: 100vw/$n;
 
 .line {
     display: flex;
-    margin-top: -$size/5;
+    margin-top: (-$size / 5);
 
     &:nth-child(even) {
-        transform: translateX(-$size/2);
+        transform: translateX(-$size / 2);
     }
 }
 
@@ -58,8 +58,7 @@ $size: 100vw/$n;
     background-size: cover;
     cursor: pointer;
     opacity: 0.7;
-    transition: opacity 0.3s ease-in-out;
-    transition: scale 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out,scale 0.3s ease-in-out;
 }
 .item:hover{
     opacity: 1;
@@ -68,6 +67,8 @@ $size: 100vw/$n;
 
 
 </style>
+
+
 
 <!-- <template>
     <div class="wrap">

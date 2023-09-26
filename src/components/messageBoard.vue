@@ -10,7 +10,7 @@
             <el-form :model="form">
                 <el-form-item class="comment-input-conainer">
                     <el-input class="comment-input" v-model="form.name" placeholder="欢迎留言交流" style="width: 750px;"
-                        @keyup.enter="onSubmit" />
+                    @keydown.enter.prevent="onSubmit" />
                     <el-button @click="onSubmit" style="margin-left: 20px;background-color: transparent;">发表</el-button>
                 </el-form-item>
             </el-form>
