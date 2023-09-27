@@ -31,38 +31,7 @@
 
                         </div>
                     </el-card>
-                    <el-card class="card2">
-                        <el-row>
-                            <el-col :span="12">
-                                <h1 style="cursor: default">喜欢的歌</h1>
-                            </el-col>
-                            <el-col :span="12">
-                                <h4 class="yequ">夜曲-周杰伦</h4>
-                              <audio  src="/mp3/yequ.mp3" controls="control"></audio>
-                            </el-col>
-                        </el-row>
-                        <el-row>
-                            <el-col :span="12">
-                                <h4 class="fanfangxiang" >反方向的钟-周杰伦</h4>
-                              <audio  src="/mp3/fanfangxiang.mp3" controls="control" style="position: absolute;padding-top: 20px;left: -10px;"></audio>
-                            </el-col>
-                            <el-col :span="12">
-                                <h4 class="yedediqizhang" style="padding-top: 20px;">夜的第七章-周杰伦</h4>
-                              <audio  src="/mp3/yedediqizhang.mp3" controls="control" style="padding-top: 20px;"></audio>
-                            </el-col>
-                        </el-row>
-                        <el-row>
-                            <el-col :span="12">
-                                <h4 class="anhao">暗号-周杰伦</h4>
-                              <audio  src="/mp3/anhao.mp3" controls="control" style="position: absolute;left: -10px;padding-top: 20px"></audio>
-                            </el-col>
-                            <el-col :span="12">
-                                <h4 class="yifuzhiming" style="padding-top: 20px;">以父之名-周杰伦</h4>
-                              <audio  src="/mp3/yifuzhiming.mp3" controls="control" style="padding-top: 20px;"></audio>
-                            </el-col>
-                        </el-row>
-                    </el-card>
-
+                    <music />
                 </div>
                 <div class="row" style="width: 100%;height: 33%;">
                     <el-card class="card3"> Hover </el-card>
@@ -86,6 +55,7 @@ import { ScrollTrigger } from 'gsap/all';
 import Header from "../components/Header.vue"
 import messageBoard from '../components/messageBoard.vue';
 import { useRouter } from 'vue-router';
+import music from "../components/music.vue";
 const screenDom = ref(null)
 const text1 = ref(null)
 const text2 = ref(null)
@@ -425,13 +395,6 @@ onMounted(() => {
 
 }
 
-.card2 {
-    width: 40%;
-    height: 100%;
-    position: relative;
-    background: linear-gradient(135deg, #fff 10%, #000);
-}
-
 .card3 {
     width: 40%;
     height: 100%;
@@ -506,18 +469,5 @@ onMounted(() => {
     opacity: 1;
     /* 显示覆盖层 */
 }
-.yequ,.yedediqizhang,.yifuzhiming{
-    position: absolute;
-    top: -12px;
-    left: 304px;
-}
-.fanfangxiang,.anhao{
-    position: absolute;
-    top: 8px;
-    left: 10px;
-}
-audio{
-  width: 283px;
-  height: 63.3px;
-}
+
 </style>
