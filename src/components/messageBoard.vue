@@ -4,7 +4,7 @@
             <div class="message-show-container">
                 <!-- 渲染新消息 -->
                 <span class="span" v-for="(message, index) in newMessages" :key="index"
-                    :style="{ top: message.randomTop + 'px' }">{{
+                    :style="{ top: message.randomTop + 'px',animationDelay: message.randomDelay + 's' }">{{
                         message.content }}</span>
             </div>
             <el-form :model="form">
@@ -19,25 +19,33 @@
 </template>
 <script setup>
 import { onMounted, reactive, ref, computed } from 'vue'
+import axios from 'axios'
+
+
 const form = reactive({name: ''})
 
-const newMessages = reactive([]); 
+const newMessages = ref([]);  
 
-const onSubmit = () => {
+
+const onSubmit = async() => {
     if (form.name.trim() !== '') {
         // 为新消息创建一个对象，包含消息内容和新的 randomTop 值
         const newMessage = {
             content: form.name,
             randomTop: generateRandomTop(),
+           randomDelay:generateRandomDelay()
         };
-        // 将新消息添加到 newMessages 数组中
-        newMessages.push(newMessage);
-        // 清空输入框内容，恢复默认样式
-        form.name = '';
+        try {
+            await axios.post('http://localhost:5174/submit', newMessage);
+            newMessages.value.push(newMessage);
+            form.name = '';
+        } catch (error) {
+            console.error('Error submitting message:', error);
+        }
     }
 }
 
-onMounted(() => {
+onMounted(async() => {
     //修改评论区背景颜色 和按钮背景颜色
     const elInputWrappers = document.querySelectorAll('.el-input__wrapper');
     elInputWrappers.forEach(wrapper => {
@@ -45,10 +53,23 @@ onMounted(() => {
     });
     //运行防止重叠的弹幕随机速度效果函数
     applyRandomAnimationTimingFunction();
+
+    try{
+        const response = await axios.get('http://localhost:5174/getMessages');
+        newMessages.value = response.data;
+    } catch (error) {
+        console.error('Error fetching messages:', error);
+    }
 })
+
 const generateRandomTop = () => {
     // 生成0到270之间的随机数
     return Math.floor(Math.random() * 271);
+};
+const generateRandomDelay = () => {
+    // 例如, 生成0到3之间的随机数,保留小数点后一位
+    const randomNumber = Math.random() * 3;
+    return randomNumber.toFixed(1);
 };
 
 //防止重叠的弹幕随机速度效果
@@ -102,21 +123,24 @@ const getRandomTimingFunction = () => {
     color: #fff;
     font-size: 20px;
     position: absolute;
-    right: 0;
     white-space: nowrap;
     /* top: 0到270px之间的随机值 */
     animation: scrolling-message 10s infinite;
+    opacity: 0;
 }
 
 @keyframes scrolling-message {
     0% {
         right: -200px;
-        /* 第一次从右侧 0px 开始 */
+        opacity: 0;
     }
-
+    1%{
+        opacity: 1;
+        right: -200px;
+    }
     100% {
         right: 1000px;
-        /* 最终位置 */
+        opacity: 1;
     }
 }
 </style>
