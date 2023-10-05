@@ -59,4 +59,17 @@ audio{
   width: 283px;
   height: 63.3px;
 }
+
+ h1 {
+    font-size: 3em;
+    text-shadow:
+        -1px 1px #bbb,
+        -2px 2px #bbb,
+        -3px 3px #bbb,
+        -4px 4px #bbb,
+        -8px 8px #0008;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+}
 </style>

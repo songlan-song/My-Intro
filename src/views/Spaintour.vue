@@ -1,71 +1,70 @@
 <template>
-    <div class="wrap">
-        <div class="container">
-            <div class="line" v-for="(line, lineIndex) in lines" :key="lineIndex">
-                <div class="item" v-for="(item, itemIndex) in line" :key="itemIndex"
-                    :style="{ backgroundImage: `url(${item})`}" ></div>
-            </div>
+  <div class="wrap">
+    <div class="container">
+      <div class="line" v-for="(line, lineIndex) in lines" :key="lineIndex">
+        <div class="item" v-for="(item, itemIndex) in line" :key="itemIndex" :style="{ backgroundImage: `url(${item})` }">
         </div>
+      </div>
     </div>
+  </div>
 </template>
 <script setup>
 import { reactive, ref } from 'vue'
 const allPicture = [
-    "/Spain-compression/1.jpg",
-    "/Spain-compression/2.jpg",
-    "/Spain-compression/3.jpg",
-    "/Spain-compression/4.jpg",
-    "/Spain-compression/5.jpg",
-    "/Spain-compression/7.jpg",
-    "/Spain-compression/8.jpg",
-    "/Spain-compression/9.jpg",
-    "/Spain-compression/10.jpg",
-    "/Spain-compression/11.jpg",
+  "/Spain-compression/1.jpg",
+  "/Spain-compression/2.jpg",
+  "/Spain-compression/3.jpg",
+  "/Spain-compression/4.jpg",
+  "/Spain-compression/5.jpg",
+  "/Spain-compression/7.jpg",
+  "/Spain-compression/8.jpg",
+  "/Spain-compression/9.jpg",
+  "/Spain-compression/10.jpg",
+  "/Spain-compression/11.jpg",
 ]
 const lines = reactive([
-    [allPicture[0], allPicture[1], allPicture[2], allPicture[3], allPicture[4], allPicture[5], allPicture[6], allPicture[7], allPicture[8], allPicture[10000]],
-    [allPicture[9], allPicture[10], allPicture[11], allPicture[12], allPicture[13], allPicture[14], allPicture[15], allPicture[16], allPicture[17], allPicture[18]],
-    [allPicture[19], allPicture[20], allPicture[21], allPicture[22], allPicture[23], allPicture[24], allPicture[25], allPicture[26], allPicture[27], allPicture[10000]],
-    [allPicture[28], allPicture[29], allPicture[30],allPicture[31], allPicture[32], allPicture[33], allPicture[34], allPicture[35], allPicture[36], allPicture[37]],
-    // 添加更多行...
+  [allPicture[0], allPicture[1], allPicture[2], allPicture[3], allPicture[4], allPicture[5], allPicture[6], allPicture[7], allPicture[8], allPicture[10000]],
+  [allPicture[9], allPicture[10], allPicture[11], allPicture[12], allPicture[13], allPicture[14], allPicture[15], allPicture[16], allPicture[17], allPicture[18]],
+  [allPicture[19], allPicture[20], allPicture[21], allPicture[22], allPicture[23], allPicture[24], allPicture[25], allPicture[26], allPicture[27], allPicture[10000]],
+  [allPicture[28], allPicture[29], allPicture[30], allPicture[31], allPicture[32], allPicture[33], allPicture[34], allPicture[35], allPicture[36], allPicture[37]],
+
 ])
 
 
 </script>
 <style lang="scss" scoped>
 .wrap {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 $n: 9;
 $size: 100vw/$n;
 
 .line {
-    display: flex;
-    margin-top: (-$size / 5);
+  display: flex;
+  margin-top: (-$size / 5);
 
-    &:nth-child(even) {
-        transform: translateX(-$size / 2);
-    }
+  &:nth-child(even) {
+    transform: translateX(-$size / 2);
+  }
 }
 
 .item {
-    width: $size;
-    height: $size;
-    background-color: rgba($color: #000000, $alpha: 0.5);
-    clip-path: polygon(50% 0, 97% 25%, 97% 75%, 50% 100%, 3% 75%, 3% 25%);
-    flex-shrink: 0;
-    background-size: cover;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s ease-in-out,scale 0.3s ease-in-out;
-}
-.item:hover{
-    opacity: 1;
-    scale: 0.8;
+  width: $size;
+  height: $size;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  clip-path: polygon(50% 0, 97% 25%, 97% 75%, 50% 100%, 3% 75%, 3% 25%);
+  flex-shrink: 0;
+  background-size: cover;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out, scale 0.3s ease-in-out;
 }
 
-
+.item:hover {
+  opacity: 1;
+  scale: 0.8;
+}
 </style>
 
 

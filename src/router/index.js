@@ -25,6 +25,11 @@ const routes = [
     name: 'Francetour',
     component: () => import('../views/Francetour.vue'),
   },
+  {
+    path: '/myFriends',
+    name: 'myFriends',
+    component:()=>import('../views/myFriends.vue')
+  }
   
 ];
 

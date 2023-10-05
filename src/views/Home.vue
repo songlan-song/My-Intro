@@ -34,7 +34,7 @@
                     <music />
                 </div>
                 <div class="row" style="width: 100%;height: 33%;">
-                    <el-card class="card3"> Hover </el-card>
+                    <el-card class="card3" @click = "toFriends"> <h1>我的社交圈</h1> </el-card>
                     <el-card class="card4"> Hover </el-card>
                 </div>
                 <div class="row" style="width: 100%;height: 33%;">
@@ -65,6 +65,11 @@ const router = useRouter()
 
 function toFootPrints() {
     router.push("/myFootprints")
+    window.scrollTo(0, 0);
+}
+
+function toFriends(){
+    router.push("/myFriends")
     window.scrollTo(0, 0);
 }
 
@@ -400,6 +405,8 @@ onMounted(() => {
     height: 100%;
     position: relative;
     cursor: pointer;
+    background:url("/friends.png");
+    background-size: cover;
 }
 
 .card4 {
@@ -438,7 +445,6 @@ onMounted(() => {
 
 /* 添加覆盖层样式 */
 .card1::before,
-
 .card3::before,
 .card4::before,
 .card5::before,
