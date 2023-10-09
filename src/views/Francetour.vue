@@ -30,7 +30,7 @@
     
 <script setup>
 import { ref } from 'vue'
-
+let isRotating =ref(false)
 const ringRotation = ref(0)
 let rotationInterval = null
 const allPicture = [
@@ -62,7 +62,8 @@ setTimeout(() => {
 }, 1000);
 
 const startRotation = (direction) => {
-    if (direction === 'left') {
+    if(!isRotating){
+        if (direction === 'left') {
         rotationInterval = setInterval(() => {
             ringRotation.value += 0.5;
         }, 10); // 调整旋转速度，这里是每 10 毫秒增加 1.5 度
@@ -72,6 +73,8 @@ const startRotation = (direction) => {
         }, 10); // 调整旋转速度，这里是每 10 毫秒减少 1.5 度
     }
     isRotating = true;
+    }
+
 }
 
 const stopRotation = () => {

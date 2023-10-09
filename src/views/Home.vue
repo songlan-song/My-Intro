@@ -35,11 +35,11 @@
                 </div>
                 <div class="row" style="width: 100%;height: 33%;">
                     <el-card class="card3" @click = "toFriends"> <h1>我的社交圈</h1> </el-card>
-                    <el-card class="card4"> Hover </el-card>
+                    <el-card class="card4"> 还在开发中...</el-card>
                 </div>
                 <div class="row" style="width: 100%;height: 33%;">
-                    <el-card class="card5"> Hover </el-card>
-                    <el-card class="card6"> Hover </el-card>
+                    <el-card class="card5"> 还在开发中... </el-card>
+                    <el-card class="card6"> 还在开发中...</el-card>
                 </div>
             </div>
         </div>

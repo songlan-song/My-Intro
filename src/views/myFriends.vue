@@ -12,11 +12,11 @@
         </div>
         <div class="za" style="overflow: hidden;cursor: pointer;">
             <div class="icon-container">
-                <div class="icon"></div>
+                <div class="za-icon"></div>
             </div>
             <div class="info">
                 <span class="name">张澳</span>
-                <span class="job">111</span>
+                <span class="job">北工大卷王</span>
             </div>
         </div>
         <div class="fjh" style="overflow: hidden;cursor: pointer;">
@@ -38,108 +38,138 @@
             </div>
         </div>
         <div class="tpf" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="tpf-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">唐鹏飞</span>
-                <span class="job">111</span>
+                <span class="job">飞砍砍的单车帅哥</span>
             </div>
         </div>
         <div class="wjh" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="wjh-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">吴建恒</span>
-                <span class="job">111</span>
+                <span class="job">一米八阳光男孩</span>
             </div>
         </div>
         <div class="zg" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="zg-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">张鸽</span>
-                <span class="job">111</span>
+                <span class="job">不喝酒的牛仔</span>
             </div>
         </div>
         <div class="lh" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="lh-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">罗恒</span>
-                <span class="job">1111</span>
+                <span class="job">云顶高端赌狗玩家</span>
             </div>
         </div>
         <div class="xkj" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="xkj-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">奚可靖</span>
-                <span class="job">1111</span>
+                <span class="job">痛风文艺青年</span>
             </div>
         </div>
         <div class="lyq" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="lyq-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">刘永庆</span>
-                <span class="job">1111</span>
+                <span class="job">睡不醒的刘肥肥</span>
             </div>
         </div>
         <div class="bjh" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="bjh-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">柏建华</span>
-                <span class="job">1111</span>
+                <span class="job">转身后仰篮球帅哥</span>
             </div>
         </div>
         <div class="ljh" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="ljh-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">李钧昊</span>
-                <span class="job">1111</span>
+                <span class="job">风骚控球抛投大师</span>
             </div>
         </div>
         <div class="swj" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="swj-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">孙伟健</span>
-                <span class="job">1111</span>
+                <span class="job">闷骚炸金花高手</span>
             </div>
         </div>
         <div class="msq" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="msq-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">莫顺泉</span>
-                <span class="job">1111</span>
+                <span class="job">千杯不倒一直喝</span>
             </div>
         </div>
         <div class="lrl" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="lrl-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">刘仁磊</span>
-                <span class="job">1111</span>
+                <span class="job">云顶老八导师</span>
             </div>
         </div>
         <div class="xh" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="xh-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">徐昊</span>
-                <span class="job">1111</span>
+                <span class="job">专业三分弹无虚发</span>
             </div>
         </div>
         <div class="hsh" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="hsh-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">何思涵</span>
-                <span class="job">1111</span>
+                <span class="job">九营十八组仙子狗尾巴花</span>
             </div>
         </div>
         <div class="lsq" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="lsq-icon"></div>
+            </div>
             <div class="info">
                 <span class="name">七七</span>
-                <span class="job">1111</span>
+                <span class="job">峡谷美女教师</span>
             </div>
         </div>
         <div class="xyx" style="overflow: hidden;cursor: pointer;">
-            <div class="icon-container"></div>
+            <div class="icon-container">
+                <div class="xyx-icon"></div>
+            </div>
             <div class="info">
-                <span class="name">谢雨欣</span>
-                <span class="job">1111</span>
+                <span class="name">谢宇欣</span>
+                <span class="job">悬壶济世大头</span>
             </div>
         </div>
         <div class="ls" style="overflow: hidden;cursor: pointer;">
@@ -182,10 +212,176 @@ import { reactive, ref } from 'vue'
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-image: url("/friends/xyb.png"), url("friendsbg/xyb.png");
-    background-position: center center, center center;
-    background-size: 80% 80%, cover;
-    background-repeat: no-repeat, no-repeat;
+    background: url("/friends/xyb.jpg");
+    background-size: cover;
+}
+.zg-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/zg.jpg");
+    background-size: cover;
+}
+.lh-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/lh.jpg");
+    background-size: cover;
+}
+.xkj-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/xkj.jpg");
+    background-size: cover;
+}
+.lyq-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/lyq.jpg");
+    background-size: cover;
+}
+.bjh-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/bjh.jpg");
+    background-size: cover;
+}
+.ljh-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/ljh.jpg");
+    background-size: cover;
+}
+.swj-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/swj.jpg");
+    background-size: cover;
+}
+.msq-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/msq.jpg");
+    background-size: cover;
+}
+.lrl-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/lrl.jpg");
+    background-size: cover;
+}
+.xh-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/xh.jpg");
+    background-size: cover;
+}
+.tpf-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/tpf.jpg");
+    background-size: cover;
+}
+.xyx-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/xyx.jpg");
+    background-size: cover;
+}
+.lsq-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/lsq.jpg");
+    background-size: cover;
+}
+.za-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/za.jpg");
+    background-size: cover;
 }
 .lrx-icon{
     width: 150px;
@@ -196,13 +392,11 @@ import { reactive, ref } from 'vue'
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-image: url("/friends/lrx.png"), url("friendsbg/lrx.jpg");
-    background-position: center center, 100% center;
-    background-size: 80% 80%, cover;
-    background-repeat: no-repeat, no-repeat;
+    background: url("/friends/lrx.jpg");
+    background-size: cover;
 }
 .ls-icon{
-    width: 200px;
+    width: 150px;
     height: 150px;
     border-radius: 100%;
     border: 5px solid rgb(223, 228, 231)  ;
@@ -210,10 +404,32 @@ import { reactive, ref } from 'vue'
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-image: url("/friends/ls.png"), url("friendsbg/ls.jpg");
-    background-position: center center, center center;
-    background-size: 80% 90%, cover;
-    background-repeat: no-repeat, no-repeat;
+    background: url("/friends/ls.jpg");
+    background-size: cover;
+}
+.hsh-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/hsh.jpg");
+    background-size: cover;
+}
+.wjh-icon{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 5px solid rgb(223, 228, 231)  ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: url("/friends/wjh.jpg");
+    background-size: cover;
 }
 .fjh-icon{
     width: 150px;
@@ -224,10 +440,8 @@ import { reactive, ref } from 'vue'
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background-image: url("/friends/fjh.png"), url("friendsbg/fjh.jpg");
-    background-position: center center, center center;
-    background-size: 80% 90%, cover;
-    background-repeat: no-repeat, no-repeat;
+    background: url("/friends/fjh.jpg");
+    background-size: cover;
 }
 .name{
     display: block;
